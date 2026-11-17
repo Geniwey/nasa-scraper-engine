@@ -1,8 +1,8 @@
 {
     "actorSpecification": 1,
-    "name": "enterprise-data-extractor",
-    "title": "Ultra-Fast Real-Time Data & Price Intelligence API",
-    "description": "High-concurrency, TLS-fingerprinted data extractor with automatic proxy rotation and structured JSON/CSV/Excel output.",
+    "name": "wallapop-fast-scraper",
+    "title": "Wallapop Real-Time Scraper & Price Monitor API",
+    "description": "Ultra-fast, TLS-fingerprinted Wallapop search and listing extractor. Extracts items, prices, locations, seller metadata, and direct URLs in seconds without browser overhead.",
     "version": "1.0",
     "meta": {
         "templateId": "python-start"
