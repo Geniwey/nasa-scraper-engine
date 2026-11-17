@@ -1,15 +1,43 @@
 {
-    "actorSpecification": 1,
-    "name": "wallapop-fast-scraper",
-    "title": "Wallapop Real-Time Scraper & Price Monitor API",
-    "description": "Ultra-fast, TLS-fingerprinted Wallapop search and listing extractor. Extracts items, prices, locations, seller metadata, and direct URLs in seconds without browser overhead.",
-    "version": "1.0",
-    "meta": {
-        "templateId": "python-start"
+    "title": "Wallapop Scraper Configuration",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+        "startUrls": {
+            "title": "Wallapop Search URLs",
+            "type": "array",
+            "description": "Paste one or more Wallapop search URLs (e.g. https://es.wallapop.com/search?keywords=iphone+15).",
+            "editor": "requestListSources",
+            "prefill": [
+                {
+                    "url": "https://es.wallapop.com/search?keywords=iphone+15"
+                }
+            ]
+        },
+        "maxItems": {
+            "title": "Maximum Listings",
+            "type": "integer",
+            "description": "Maximum number of listings to extract per run (0 = unlimited).",
+            "default": 40,
+            "minimum": 0
+        },
+        "maxConcurrency": {
+            "title": "Parallel Workers",
+            "type": "integer",
+            "description": "Number of simultaneous search URLs processed at once.",
+            "default": 3,
+            "minimum": 1,
+            "maximum": 10
+        },
+        "proxyConfiguration": {
+            "title": "Proxy Configuration",
+            "type": "object",
+            "description": "Apify Proxy settings to prevent rate limits.",
+            "editor": "proxy",
+            "prefill": {
+                "useApifyProxy": true
+            }
+        }
     },
-    "input": "./input_schema.json",
-    "storages": {
-        "dataset": "./dataset_schema.json"
-    },
-    "dockerfile": "../Dockerfile"
+    "required": ["startUrls"]
 }
