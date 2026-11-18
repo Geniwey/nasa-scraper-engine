@@ -1,0 +1,12 @@
+{
+    "actorOutputSchemaVersion": 1,
+    "title": "Wallapop Scraper Output",
+    "description": "Extracted Wallapop listings dataset in JSON, CSV, or Excel format.",
+    "properties": {
+        "results": {
+            "type": "string",
+            "title": "Wallapop Listings Dataset",
+            "template": "{{links.apiDefaultDatasetUrl}}/items"
+        }
+    }
+}
